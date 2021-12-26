@@ -1,9 +1,10 @@
+import notFoundImg from '../../images/pnf.jpg'
 import './pageNotFound.scss'
 
 const PageNotFound = () => {
     return (
-        <div>
-            PageNotFound
+        <div className='pnf-container'>
+            <img src={notFoundImg} alt="not-found" />
         </div>
     )
 }

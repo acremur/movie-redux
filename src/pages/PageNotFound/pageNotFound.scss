@@ -1,0 +1,13 @@
+.pnf-container {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.pnf-container > img {
+    width: 70%;
+    height: 40%;
+    min-width: 250px;
+    border-radius: 5px;
+}
