@@ -1,19 +1,29 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import MediaList from '../../components/MediaList/MediaList'
-import { fetchAsyncMovies, fetchAsyncSeries } from '../../redux/movies/mediaSlice'
+import { 
+    fetchAsyncMovies, 
+    fetchAsyncSeries, 
+    getQueryState 
+} from '../../redux/movies/mediaSlice'
 
 import './home.scss'
 
 const Home = () => {
 
     const dispatch = useDispatch()
+    const query = useSelector(getQueryState)
 
     useEffect(() => {
-        dispatch(fetchAsyncMovies('Harry'))
-        dispatch(fetchAsyncSeries('Friends'))
-    }, [dispatch])
+        if (query === '') {
+            dispatch(fetchAsyncMovies('Harry'))
+            dispatch(fetchAsyncSeries('Friends'))
+        } else {
+            dispatch(fetchAsyncMovies(query))
+            dispatch(fetchAsyncSeries(query))
+        }
+    }, [])
     
     return (
         <>

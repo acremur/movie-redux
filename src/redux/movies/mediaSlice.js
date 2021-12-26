@@ -28,6 +28,7 @@ export const fetchAsyncMediaDetails = createAsyncThunk(
 })
 
 const initialState = {
+    query: '',
     movies: {},
     series: {},
     selectedMedia: {}
@@ -37,6 +38,9 @@ const mediaSlice = createSlice({
     name: 'media',
     initialState,
     reducers: {
+        setQueryState: (state, { payload }) => {
+            state.query = payload
+        },
         removeSelectedMedia: state => {
             state.selectedMedia = {}
         }
@@ -60,7 +64,8 @@ const mediaSlice = createSlice({
     }
 })
 
-export const { removeSelectedMedia } = mediaSlice.actions
+export const { setQueryState, removeSelectedMedia } = mediaSlice.actions
+export const getQueryState = state => state.media.query
 export const getAllMovies = state => state.media.movies
 export const getAllSeries = state => state.media.series
 export const getMediaDetails = state => state.media.selectedMedia
