@@ -1,0 +1,35 @@
+@import '../../common//color.scss';
+
+.media-list {
+    margin: 20px 0;
+
+    h2 {
+        color: $font-secondary;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+}
+
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 15px;
+    justify-items: center;
+}
+
+// .media-container {
+//     margin: 0 2rem;
+// }
+
+
+// @media (max-width: 480px) {
+//     .media-container {
+//         margin: 0;
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .media-container {
+//         margin: 0 1rem;
+//     }
+// }

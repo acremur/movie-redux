@@ -1,0 +1,84 @@
+@import '../../common/color.scss';
+
+.header {
+    background-color: $secondary-color;
+    height: 72px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo {
+    color: $font-primary;
+    font-size: 28px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.user-image {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.user-image img {
+    width: 45px;
+    height: 45px;
+}
+
+.search-bar {
+    width: 100%;
+    flex: 10;
+    margin-left: 40px;
+    
+    form {
+        display: flex;
+        justify-content: center;
+
+        button {
+            padding: 0 8px;
+            font-size: 20px;
+            cursor: pointer;
+            height: 38px;
+            background-color: $font-secondary;
+            border: none;
+            border-left: 2px solid $primary-color;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    input {
+        font-size: 18px;
+        width: 100%;
+        max-width: 768px;
+        padding: 10px;
+        height: 38px;
+        outline: none;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        height: fit-content;
+        padding: 0.5rem;
+    }
+
+    .search-bar {
+        width: 90%;
+        padding: 0.5rem;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-image {
+        display: none;
+    }
+}
